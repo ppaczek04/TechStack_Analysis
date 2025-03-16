@@ -97,7 +97,7 @@ It includes detailed information on:
 - To calculate the median year salary I used DAX.
 
     ```
-    Median Salary:=MEDIAN(data_jobs_salary[salary_year_avg])
+    Median Salary := MEDIAN(data_jobs_salary[salary_year_avg])
     ```
 
 ### 📊 Analysis
