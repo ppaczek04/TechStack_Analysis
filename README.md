@@ -25,7 +25,7 @@ The following Excel skills were utilized for analysis:
 
 ### Data Jobs Dataset
 
-he dataset used for this project contains real-world data science job information from 2023. The dataset is available in the course metioned before (it is also avaiable in the Resources/Datasets file).
+The dataset used for this project contains real-world data science job information from 2023. The dataset is available in the course metioned before (it is also avaiable in the Resources/Datasets file).
 It includes detailed information on:
 
 - **👨‍💼 Job titles**
@@ -46,7 +46,7 @@ It includes detailed information on:
 #### 🔄 Transform
 
 - Then, I transformed each query by changing column types, removing unnecessary columns, cleaning text to eliminate specific words, and trimming excess whitespace.
-    - 📊 data_jobs_all
+    - 📊 data_jobs_salary ('/all')
 
         ![2_Project_Analysis_Screenshot1.png](/Resources/Images/2_Project_Analysis_Screenshot1.png)
 
@@ -57,7 +57,7 @@ It includes detailed information on:
 #### 🔗 Load
 
 - Finally, I loaded both transformed queries into the workbook, setting the foundation for my subsequent analysis.
-    - 📊 data_jobs_all
+    - 📊 data_jobs_salary ('/all')
 
         ![2_Project_Analysis_Screenshot3.png](/Resources/Images/2_Project_Analysis_Screenshot3.png)
 
@@ -88,9 +88,8 @@ It includes detailed information on:
 - 📊 I moved the `job_title_short` to the rows area and `salary_year_avg` into the values area.
 - 🧮 Then I added new measure to calculate the median salary for United States jobs.
     ```
-    =CALCULATE(
-        MEDIAN(data_jobs_all[salary_year_avg]),
-        data_jobs_all[job_country] = "United States")
+    =CALCULATE(MEDIAN(data_jobs_salary[salary_year_avg]);
+        data_jobs_salary[job_country]="United States")
     ```
 
 #### 🧮 DAX
@@ -98,7 +97,7 @@ It includes detailed information on:
 - To calculate the median year salary I used DAX.
 
     ```
-    Median Salary := MEDIAN(data_jobs_all[salary_year_avg])
+    Median Salary:=MEDIAN(data_jobs_salary[salary_year_avg])
     ```
 
 ### 📊 Analysis
@@ -120,7 +119,7 @@ It includes detailed information on:
 
 #### 💪 Power Pivot
 
-- 🔗 I created a data model by integrating the `data_jobs_all` and `data_jobs_skills` tables into one model.
+- 🔗 I created a data model by integrating the `data_jobs_salary`(/'all') and `data_jobs_skills` tables into one model.
 - 🧹 Since I had already cleaned the data using Power Query; Power Pivot created a relationship between these two tables.
 
 #### 🔗 Data Model
@@ -174,6 +173,6 @@ It includes detailed information on:
 
 ## Conclusion
 
-As a data enthusiast, I embarked on this Excel-based project to uncover valuable insights about the data science job market. Using a dataset I've curated from real-world job postings, I analyzed job titles, salaries, locations, and essential skills. By leveraging Excel features like Power Query, PivotTables, DAX, and charts, I discovered key correlations between multiple skills and higher salaries, particularly in Python, SQL, and cloud technologies. 
+As a data enthusiast, I embarked on this Excel-based project to uncover valuable insights about the data science job market. Using a dataset I've created from real-world job postings, I analyzed job titles, salaries, locations, and essential skills. By leveraging Excel features like Power Query, PivotTables, DAX, and charts, I discovered key correlations between multiple skills and higher salaries, particularly in Python, SQL, and cloud technologies. 
 
 I hope this project serves as a practical guide for data professionals and provides an overview of the skills needed for higher-paying roles.
